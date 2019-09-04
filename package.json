@@ -1,6 +1,6 @@
 {
   "name": "cdt-gdb-vscode",
-  "version": "0.0.90",
+  "version": "0.0.90-theia.2",
   "description": "VS Code extension for CDT GDB debug adapter",
   "publisher": "eclipse-cdt",
   "repository": {
@@ -326,6 +326,7 @@
     ]
   },
   "scripts": {
+    "preinstall": "cd cdt-gdb-adapter && yarn && yarn build && yarn pack --filename cdt-gdb-adapter.tgz",
     "build:tsc": "tsc",
     "watch:tsc": "tsc -w",
     "build:webpack": "webpack --mode production",
@@ -338,7 +339,7 @@
     "vsce:package": "vsce package"
   },
   "dependencies": {
-    "cdt-gdb-adapter": "*",
+    "cdt-gdb-adapter": "file:cdt-gdb-adapter/cdt-gdb-adapter.tgz",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"
   },

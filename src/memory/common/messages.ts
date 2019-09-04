@@ -13,7 +13,7 @@ export namespace Message {
     export interface Request {
         token?: number;
     }
-    
+
     export interface Response {
         token?: number;
         err?: string;
